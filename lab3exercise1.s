@@ -1,19 +1,19 @@
-.data					; start of data segment
-A:	.word32 0			; create a 32-bit word with value 0 (decimal)
-B: 	.word32 1			; create a 32-bit word with value 1 (decimal)
-C: 	.word32 2			; create a 32-bit word with value 2 (decimal)
-D: 	.word32 3			; create a 32-bit word with value 3 (decimal)
-E: 	.word32 4			; create a 32-bit word with value 4 (decimal)
-F: 	.word32 5			; create a 32-bit word with value 5 (decimal)
-G: 	.word32 6			; create a 32-bit word with value 6 (decimal)
-H: 	.word32 7			; create a 32-bit word with value 7 (decimal)
-I: 	.word32 8			; create a 32-bit word with value 8 (decimal)
-J: 	.word32 9			; create a 32-bit word with value 9 (decimal)
-K: 	.word32 10			; create a 32-bit word with value 10 (decimal)
-L: 	.word32 11			; create a 32-bit word with value 11 (decimal)
-M:	.word 2
-CTRL:	.word 0x10000
-DATA:	.word 0x10008
+.data					
+	array:	.space 12			; 12 empty spaces
+	B: 		.word 1, 2, 3		; words of data (64-bits)
+	C: 		.word32 2			; create a 32-bit word with value 2 (decimal)
+	D: 		.word32 3			; create a 32-bit word with value 3 (decimal)
+	E: 		.word32 4			; create a 32-bit word with value 4 (decimal)
+	F: 		.word32 5			; create a 32-bit word with value 5 (decimal)
+	G: 		.word32 6			; create a 32-bit word with value 6 (decimal)
+	H: 		.word32 7			; create a 32-bit word with value 7 (decimal)
+	I: 		.word32 8			; create a 32-bit word with value 8 (decimal)
+	J: 		.word32 9			; create a 32-bit word with value 9 (decimal)
+	K: 		.word32 10			; create a 32-bit word with value 10 (decimal)
+	L: 		.word32 11			; create a 32-bit word with value 11 (decimal)
+	M:		.word 2
+	CTRL:	.word 0x10000
+	DATA:	.word 0x10008
 
 .text				; start of code segment
 main:				; label indicating the start of the program, lable represetns the instruction address (0x0000)
@@ -21,7 +21,7 @@ main:				; label indicating the start of the program, lable represetns the instr
 	ld r1, CTRL(r0)
 	ld r2, DATA(r0)
 	ld r3, M(r0)
-	ld r4, A(r0)
+	ld r4, array(r0)
 	ld r5, B(r0)
 	ld r6, C(r0)
 	ld r7, D(r0)
